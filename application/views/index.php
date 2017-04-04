@@ -18,8 +18,13 @@ $this->load->library('form_validation');
         <p>Check out what I built. A cool application using PHP MVC framework, CodeIgniter, MySQL with Twitter Bootstrap!.</p>
     </div>
     <div id='container'>
-        <?= $this->session->flashdata("login_errors"); ?>
-        <!-- login -->
+        <?php
+        if($this->session->flashdata('login_error'))
+        { ?>
+            <p><?= $this->session->flashdata('login_error') ?></p>
+            <?php
+        }
+        ?>        <!-- login -->
         <form action='/login_user' method='post'>
             <h3>Log In</h3>
             <div class='required'>
