@@ -28,7 +28,7 @@ class Users extends CI_Controller {
 				}
 			}
 		}
-		$this->load->view('register');
+		$this->load->view('index');
 
 	}
 
@@ -56,7 +56,7 @@ class Users extends CI_Controller {
 				}
 			}
 		}
-		$this->load->view('login');
+		$this->load->view('index');
 
 	}
 
