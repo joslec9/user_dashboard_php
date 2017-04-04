@@ -1,0 +1,25 @@
+div.cust-pad
+{
+    background-color: lightskyblue;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+input.btn
+{
+    margin-top: 12px;
+}
+div.message
+{
+    background-color: limegreen;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+div.comment
+{
+    background-color: royalblue;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
