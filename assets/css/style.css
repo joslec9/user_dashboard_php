@@ -64,7 +64,7 @@ p.error {
     text-align: center;
 }
 
-p.registered {
+p.success {
     color: green;
     margin: 0;
     text-align: center;

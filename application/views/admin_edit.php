@@ -16,8 +16,18 @@ $this->load->library('form_validation');
 		<h2>Edit user #<?= $id ?></h2>
 		<div class="col-md-6 blue">
 			<h3>Edit Information</h3>
-            <?= $this->session->flashdata("update_info"); ?>
-            <?= $this->session->flashdata("update_error"); ?>
+            <?php
+            if($this->session->flashdata('update_error'))
+            { ?>
+                <p class="error"><?= $this->session->flashdata("update_error"); ?></p>
+                <?php
+            }
+            else
+            { ?>
+                <p class="success"><?= $this->session->flashdata("update_info"); ?></p>
+            <?php
+            }
+            ?>
 			<form action="/users/edit/<?= $id ?>" method="post">
 				<input type="hidden" name="form_id" value="user_info">
 				<div class="form-group">
@@ -48,8 +58,18 @@ $this->load->library('form_validation');
 		</div>
 		<div class="col-md-5 blue pull-right">
 			<h3>Change Password</h3>
-            <?= $this->session->flashdata("password_updated"); ?>
-            <?= $this->session->flashdata("password_error"); ?>
+            <?php
+            if($this->session->flashdata('update_error'))
+            { ?>
+                <p class="error"><?= $this->session->flashdata("password_error"); ?></p>
+                <?php
+            }
+            else
+            { ?>
+                <p class="success"><?= $this->session->flashdata("password_updated"); ?></p>
+                <?php
+            }
+            ?>
 			<form action="/users/edit/<?= $id ?>" method="post">
 				<input type="hidden" name="form_id" value="user_password">
 				<div class="form-group">

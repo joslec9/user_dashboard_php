@@ -22,7 +22,7 @@ $this->load->library('form_validation');
         <?php
         if($this->session->flashdata('login_error'))
         { ?>
-            <p><?= $this->session->flashdata('login_error') ?></p>
+            <p class="error"><?= $this->session->flashdata('login_error') ?></p>
             <?php
         }
         ?>
@@ -44,7 +44,7 @@ $this->load->library('form_validation');
         <?php
         if($this->session->flashdata("registration_success"))
         { ?>
-            <p><?= $this->session->flashdata('registration_success') ?></p>
+            <p class="success"><?= $this->session->flashdata('registration_success') ?></p>
             <?php
         }
         ?>
