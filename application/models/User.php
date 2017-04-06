@@ -24,7 +24,6 @@ class User extends CI_Model
             $values = array($user_data['email'], $user_data['first'], $user_data['last'], 'Add a description',
                 $encryptedPassword, 'normal', date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
             $this->db->query($query, $values);
-
             return true;
         }
 

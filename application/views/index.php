@@ -19,6 +19,13 @@ $this->load->library('form_validation');
     </div>
     <div id='container'>
         <!-- login -->
+        <?php
+        if($this->session->flashdata('login_error'))
+        { ?>
+            <p class="error"><?= $this->session->flashdata('login_error') ?></p>
+            <?php
+        }
+        ?>
         <form action='/login_user' method='post'>
             <h3>Log In</h3>
             <div class='required'>
@@ -33,6 +40,13 @@ $this->load->library('form_validation');
         </form>
 
         <!-- register -->
+        <?php
+        if($this->session->flashdata("registration_success"))
+        { ?>
+            <p class="success"><?= $this->session->flashdata('registration_success') ?></p>
+            <?php
+        }
+        ?>
         <form class = 'register' action='register' method = 'post'>
             <h3>Register</h3>
             <div class='required'>
