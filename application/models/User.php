@@ -25,6 +25,7 @@ class User extends CI_Model {
 			$query = "INSERT INTO users (email, first_name, last_name, description, password, user_level, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?)";
 			$values = array($user_data['email'], $user_data['first'], $user_data['last'], 'Add a description', $encryptedPassword, 'normal', date("Y-m-d H:i:s"), date("Y-m-d H:i:s"));
 			$this->db->query($query, $values);
+            $this->session->set_flashdata('registration_success', 'Successfully registered, please login to gain access.');
 			return true;
 		}
 

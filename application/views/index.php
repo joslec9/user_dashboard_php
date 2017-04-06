@@ -18,13 +18,15 @@ $this->load->library('form_validation');
         <p>Check out what I built. A cool application using PHP MVC framework, CodeIgniter, MySQL with Twitter Bootstrap!.</p>
     </div>
     <div id='container'>
+        <!-- login -->
         <?php
         if($this->session->flashdata('login_error'))
         { ?>
             <p><?= $this->session->flashdata('login_error') ?></p>
             <?php
         }
-        ?>        <!-- login -->
+        ?>
+
         <form action='/login_user' method='post'>
             <h3>Log In</h3>
             <div class='required'>
@@ -39,27 +41,37 @@ $this->load->library('form_validation');
         </form>
 
         <!-- register -->
-        <?= $this->session->flashdata("success"); ?>
-        <?= $this->session->flashdata("registration_errors"); ?>
+        <?php
+        if($this->session->flashdata("registration_success"))
+        { ?>
+            <p><?= $this->session->flashdata('registration_success') ?></p>
+            <?php
+        }
+        ?>
         <form class = 'register' action='register' method = 'post'>
             <h3>Register</h3>
             <div class='required'>
+                <p><?= form_error('first'); ?></p>
                 <label for='first_name'>First name:</label>
                 <input type='text' class="form-control" name='first_name'/>
             </div>
             <div class='required'>
+                <p><?= form_error('last'); ?></p>
                 <label for='last_name'>Last name:</label>
                 <input type='text' class="form-control" name='last_name'/>
             </div>
             <div class='required'>
+                <p><?= form_error('email'); ?></p>
                 <label for='email'>Email:</label>
                 <input type='text' class="form-control" name='email'/>
             </div>
             <div class='required'>
+                <p><?= form_error('password'); ?></p>
                 <label for='password'>Password:</label>
                 <input type='password' class="form-control" name='password'/>
             </div>
             <div class='required'>
+                <p><?= form_error('confirm'); ?></p>
                 <label for='confirm-password'>Confirm password:</label>
                 <input type='password' class="form-control" name='c_password'/>
             </div>
