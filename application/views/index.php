@@ -36,29 +36,29 @@ $this->load->library('form_validation');
         <form class = 'register' action='register' method = 'post'>
             <h3>Register</h3>
             <div class='required'>
-<!--                <p>--><?//= form_error('first'); ?><!--</p>-->
+                <p><?= form_error('first'); ?></p>
                 <label for='first_name'>First name:</label>
                 <input type='text' class="form-control" name='first_name'/>
             </div>
             <div class='required'>
-<!--                <p>--><?//= form_error('last'); ?><!--</p>-->
+                <p><?= form_error('last'); ?></p>
                 <label for='last_name'>Last name:</label>
                 <input type='text' class="form-control" name='last_name'/>
             </div>
             <div class='required'>
-<!--                <p>--><?//= form_error('email'); ?><!--</p>-->
+                <p><?= form_error('email'); ?></p>
                 <label for='email'>Email:</label>
                 <input type='text' class="form-control" name='email'/>
             </div>
             <div class='required'>
-<!--                <p>--><?//= form_error('password'); ?><!--</p>-->
+                <p><?= form_error('password'); ?></p>
                 <label for='password'>Password:</label>
                 <input type='password' class="form-control" name='password'/>
             </div>
             <div class='required'>
-<!--                <p>--><?//= form_error('confirm'); ?><!--</p>-->
+                <p><?= form_error('confirm'); ?></p>
                 <label for='confirm-password'>Confirm password:</label>
-                <input type='password' class="form-control" name='c_password'/>
+                <input type='password' class="form-control" name='confirm_password'/>
             </div>
             <input class="btn btn-success" type="submit" name="register" value="Register!">
         </form>
