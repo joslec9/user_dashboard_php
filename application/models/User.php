@@ -72,6 +72,10 @@ class User extends CI_Model
         return $this->db->query("SELECT * FROM users")->result_array();
     }
 
+    public function fetch_name($name) {
+        return $this->db->query("SELECT first_name FROM users WHERE first_name = ?", $name)->row_array();
+    }
+
     public function update_desc($data) {
         $query = "UPDATE users SET description = ?, updated_at = ? WHERE id = ?";
         $values = array($data['description'], date("Y-m-d H:i:s"), $data['id']);

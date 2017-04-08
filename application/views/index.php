@@ -29,10 +29,12 @@ $this->load->library('form_validation');
         <form action='/login_user' method='post'>
             <h3>Log In</h3>
             <div class='required'>
+                <p><?= form_error('email'); ?></p>
                 <label for='email'>Email:</label>
                 <input type='text' name='email' class="form-control" placeholder="email@domain.com" />
             </div>
             <div class='required'>
+                <p><?= form_error('password'); ?></p>
                 <label for='password'>Password:</label>
                 <input type="password" name="password" class="form-control" placeholder="password" />
             </div>

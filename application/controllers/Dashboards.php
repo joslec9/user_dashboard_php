@@ -3,7 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboards extends CI_Controller {
 
-	public function dashboard_page()
+    public function dashboard_page()
+    {
+        $this->load->model('User');
+        $view_data['users'] = $this->User->fetch_users();
+        $this->load->view('dashboard', $view_data);
+    }
+
+    public function user_dashboard()
 	{
 		$this->load->model('User');
 		$view_data['users'] = $this->User->fetch_users();

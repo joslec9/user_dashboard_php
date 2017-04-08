@@ -5,7 +5,7 @@ $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['register'] = "users/register";
 $route['login'] = "users/login";
-$route['dashboard/admin'] = "dashboards/dashboard_page";
+$route['dashboard/admin'] = "dashboards/user_dashboard";
 $route['dashboard'] = "dashboards/dashboard_page";
 $route['login_user'] = "users/login";
 

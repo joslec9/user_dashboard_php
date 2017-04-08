@@ -10,51 +10,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Dojo Dashboard</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <?php
-                if($this->session->userdata('admin'))
-                {
-                    ?>
-                    <li><a href="/dashboard/admin">Dashboard <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
-                    <?php
-                }
-                else
-                {
-                    ?>
-                    <li><a href="/dashboard">Dashboard <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
-                    <?php
-                }
-                ?>
-                <li><a href="/users/edit">Profile <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-                <li class="active"><a href="#"><?= $wall_user['first_name'] ?>'s Wall <span class="glyphicon glyphicon-comment" aria-hidden="true"></span><span class="sr-only">(current)</span></a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login">Log off <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-
-</nav>
+<?php $this->load->view('partials/custom_nav.php'); ?>
 <!-- main content -->
 <?php
 $t = time($wall_user['created_at']);
 $reg_date = date("F j, Y", $t);
 ?>
-<div class="container">
+<div class="container" style="margin-top: 50px;">
     <h3><?= $wall_user['first_name'] ?> <?= $wall_user['last_name'] ?></h3>
     <div class="col-md-6 cust-pad">
         <div class="col-md-12">

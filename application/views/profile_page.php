@@ -14,8 +14,14 @@ $this->load->library('form_validation');
 	<!-- main content -->
 	<div class="container">
 		<h2>Edit Profile</h2>
+        <?php
+        if($this->session->flashdata('updated_error'))
+        { ?>
+            <p class="error"><?= $this->session->flashdata('updated_error') ?></p>
+            <?php
+        }
+        ?>
         <?= $this->session->flashdata("updated_info"); ?>
-        <?= $this->session->flashdata("updated_error"); ?>
 		<div class="col-md-6 blue">
 			<h3>Edit Information</h3>
 			<form action="/edit/info" method="post">
@@ -39,8 +45,14 @@ $this->load->library('form_validation');
 		</div>
 		<div class="col-md-5 blue pull-right">
 			<h3>Change Password</h3>
+            <?php
+            if($this->session->flashdata('password_error'))
+            { ?>
+                <p class="error"><?= $this->session->flashdata('password_error') ?></p>
+                <?php
+            }
+            ?>
             <?= $this->session->flashdata("password_updated"); ?>
-            <?= $this->session->flashdata("password_error"); ?>
 			<form action="/edit/password" method="post">
 				<div class="form-group">
 					<label>Password</label>

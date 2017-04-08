@@ -6,12 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<title>Dashboard</title>
     <?php $this->load->view('partials/head.php'); ?>
+    <?php $this->load->view('partials/title_user_level_condition.php'); ?>
 </head>
 <body>
 <?php $this->load->view('partials/nav.php'); ?>
 	<!-- main content -->
-	<div class="container">
-<?php
+	<div class="container"style="margin-top: 35px;">
+        <?php
 if($this->session->userdata('admin'))
 { ?>
 		<h3>Manage Users</h3>
@@ -90,6 +91,7 @@ if($this->session->userdata('admin'))
 			</tbody>
 		</table>
 	</div>
+</div>
     <?php $this->load->view('partials/scripts.php'); ?>
 </body>
 </html>

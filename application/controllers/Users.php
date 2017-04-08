@@ -18,13 +18,13 @@ class Users extends CI_Controller {
 				{
 					$this->session->set_userdata('userid', $user['id']);
 					$this->session->set_userdata('admin', true);
-					redirect('/dashboard/admin/');
+					redirect('/dashboard');
 				}
 				else
 				{
 					$this->session->set_userdata('userid', $user['id']);
 					$this->session->set_userdata('admin', false);
-					redirect('dashboard/');
+					redirect('/dashboard');
 				}
 			}
 		}
@@ -46,13 +46,13 @@ class Users extends CI_Controller {
 				{
 					$this->session->set_userdata('userid', $user['id']);
 					$this->session->set_userdata('admin', true);
-					redirect('/dashboard/admin');
+                    redirect('/dashboard');
 				}
 				else
 				{
 					$this->session->set_userdata('userid', $user['id']);
 					$this->session->set_userdata('admin', false);
-					redirect('dashboard/');
+                    redirect('/dashboard');
 				}
 			}
 		}

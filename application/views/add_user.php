@@ -12,7 +12,7 @@ $this->load->library('form_validation');
 <body>
 <?php $this->load->view('partials/nav.php'); ?>
 	<!-- main content -->
-	<div class="container">
+	<div class="container" style="margin-top: 50px">
 		<div class="col-md-4 padded blue">
 			<h2>Add a new user</h2>
 			<form action="/register_admin" method="post">
